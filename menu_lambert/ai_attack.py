@@ -18,12 +18,12 @@ def run_game():
     option_button = Button(main_settings, screen, 'OPTION',  main_settings.screen_width / 2, 500)
     exit_button = Button(main_settings, screen, 'EXIT',  main_settings.screen_width / 2, 600)
     button = [play_button, instruction_button, option_button, exit_button]
+    stats = GameStats(main_settings)
 
-    #main_menu = Main_menu(main_settings, screen)
-    #stats = GameStats(main_settings)
     while True:
-        gf.check_events()
-        # if stats.game_active:
-        gf.update_screen(main_settings, screen, button)
+        gf.check_events(button, stats)
+       # if stats.game_active:
+
+        gf.update_screen(main_settings, screen, button, stats)
 
 run_game()
